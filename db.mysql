@@ -1,0 +1,131 @@
+-- MySQL dump 10.16  Distrib 10.1.26-MariaDB, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: tempdb
+-- ------------------------------------------------------
+-- Server version	10.1.26-MariaDB-0+deb9u1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `inventory`
+--
+
+DROP TABLE IF EXISTS `inventory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `inventory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `item` varchar(50) NOT NULL,
+  `model` varchar(100) DEFAULT NULL,
+  `manufacturer` varchar(100) DEFAULT NULL,
+  `stock` int(11) DEFAULT NULL,
+  `cost` double(6,2) DEFAULT NULL,
+  `description` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `inventory`
+--
+
+LOCK TABLES `inventory` WRITE;
+/*!40000 ALTER TABLE `inventory` DISABLE KEYS */;
+INSERT INTO `inventory` VALUES (4,'usb keyboard','KU-1156','HP',1,10.00,NULL),(5,'usb keyboard','SK-1688','HP',1,10.00,NULL),(6,'keyboard dock','ECR-K10AWE','SAMSUNG',1,45.00,NULL),(7,'usb keyboard','SK-2885','HP',1,10.00,NULL),(8,'usb keyboard','PR1101U','HP',1,15.00,NULL),(9,'usb mouse','unknown','unknown',1,2.50,NULL),(10,'label maker','1750160','DYMO',1,60.00,NULL),(11,'label maker','1750283','DYMO',1,40.00,NULL),(12,'headset','unknown','Plantronics',1,30.00,NULL),(13,'scanner','S8X1100','VISIONEER',1,60.00,NULL),(14,'HDMI Connection Kit','unknown','unknown',1,15.00,NULL),(15,'headset','EAR-005','unknown',1,10.00,NULL),(16,'DSL Filter','LFT4-1','PACE',1,5.00,NULL),(17,'male mini usb to standard usb female','unknown','unknown',1,10.00,NULL),(18,'usb ac power adapter','A1385','APPLE',1,18.00,NULL),(19,'usb ac power adapter','ADS-10BE-05','FUGOO',1,20.00,NULL),(20,'usb ac power adapter','unknown','unknown',1,20.00,NULL),(21,'DSL FILTER','LFT 4-1GB','unknown',1,5.00,NULL),(22,'male mini usb to standard usb male','unknown','FUGOO',1,10.00,NULL),(23,'male mini usb to standard usb male','unknown','unknown',1,10.00,NULL),(24,'male to male stereo audio cable','unknown company','unknown',1,10.00,NULL),(25,'male to male stereo audio cable','unknown','FUGOO',1,10.00,NULL),(26,'male mini usb to standard usb male','unknown','OUKITEL',1,10.00,NULL),(27,'speaker bag','unknown','FUGOO',1,10.00,NULL),(28,'headset','unknown','unknown',1,10.00,NULL),(29,'ethernet male to male','unknown','unknown',1,10.00,NULL),(30,'ethernet male','unknown','unknown',1,10.00,NULL),(31,'male mini usb to standard usb male','unknown','unknown',1,10.00,NULL),(32,'4GB memory','M471B5273DH0-CH9','SAMSUNG',1,22.00,NULL),(33,'usb male to','unknown','unknown',1,10.00,NULL),(34,'vga male to male','unknown','unknown',1,10.00,NULL),(35,'standard hdmi male to mini hdmi male','unknown','SONY',1,20.00,NULL),(36,'dvi male to male','unknown','unknown',1,15.00,NULL),(37,'3 pin male power cable','unknown','unknown',1,10.00,NULL),(38,'3 pin female power cable','unknown','unknown',1,10.00,NULL),(39,'monitor','EA190M-BK','unknown',1,100.00,NULL),(40,'monitor','LCD1770VX-BK','NEC',1,50.00,NULL),(41,'Speaker','Joy P820','FileMate',1,10.00,NULL),(42,'Powerbank','unknown','CHARG',3,20.00,NULL),(43,'130 labels/roll','unknown','DYMO',1,15.00,NULL),(44,'HP Charger','HSTNN-LA01-E','HP',1,5.00,NULL),(45,'BT Portable Spaker','SE-BS0091','AKOUSTIQ',3,80.00,NULL),(46,'Portable Flash Light and PowerBank','Q-02','FREMO',2,50.00,NULL),(47,'Micro USB Home Charger','BM-PRT201-MC','BYTECH',1,35.00,NULL),(48,'BT Portable Spaker','FC-235','AKOUSTIQ',1,50.00,NULL),(62,'TV','TS-210',NULL,NULL,NULL,NULL),(63,'Projector','PO-121',NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `inventory` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `positions`
+--
+
+DROP TABLE IF EXISTS `positions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `positions` (
+  `position_id` int(10) NOT NULL AUTO_INCREMENT,
+  `position` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`position_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `positions`
+--
+
+LOCK TABLES `positions` WRITE;
+/*!40000 ALTER TABLE `positions` DISABLE KEYS */;
+INSERT INTO `positions` VALUES (1,'Full Stack Developer & Linux System Administrator'),(2,'Customer Service & Relations Representative'),(3,'unknown position');
+/*!40000 ALTER TABLE `positions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `worker_account`
+--
+
+DROP TABLE IF EXISTS `worker_account`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `worker_account` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `email` varchar(50) DEFAULT NULL,
+  `password` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `worker_account`
+--
+
+LOCK TABLES `worker_account` WRITE;
+/*!40000 ALTER TABLE `worker_account` DISABLE KEYS */;
+INSERT INTO `worker_account` VALUES (1,'jfelix','mypass'),(2,'lfelix','herpass'),(3,'guestu','guestp');
+/*!40000 ALTER TABLE `worker_account` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `worker_info`
+--
+
+DROP TABLE IF EXISTS `worker_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `worker_info` (
+  `worker_id` int(10) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(25) DEFAULT NULL,
+  `last_name` varchar(25) DEFAULT NULL,
+  `position_id` int(10) DEFAULT NULL,
+  PRIMARY KEY (`worker_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `worker_info`
+--
+
+LOCK TABLES `worker_info` WRITE;
+/*!40000 ALTER TABLE `worker_info` DISABLE KEYS */;
+INSERT INTO `worker_info` VALUES (1,'Jorge','Felix',1),(2,'Lis','Felix',2),(3,'unknown first name','unknown last name',3);
+/*!40000 ALTER TABLE `worker_info` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-11-16 21:28:09
