@@ -8,7 +8,7 @@ if(!($login -> sessionID)){
 $mem = new member();
 $mem -> finduserbyID($login -> sessionID);
 ?>
-
+<!-- VIEW --> 
 <html>
 	<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
