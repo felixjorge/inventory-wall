@@ -1,5 +1,5 @@
 <?php
-/* view */
+/* CONTROLLER */
 class viewInventory extends inventory{
 	public function showAllInventory(){
 		$info = $this -> getAllInventory();
