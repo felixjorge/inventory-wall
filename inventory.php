@@ -1,5 +1,5 @@
 <?php
-/* Controller */
+/* MODEL */
 class inventory extends database{
 	protected function getAllInventory(){
 		$query = "select * 
